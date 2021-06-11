@@ -1,5 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View, Text, Image, StyleSheet} from 'react-native';
+import OrderList from './views/OrderList';
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: '#F4F0F4'},
@@ -41,23 +42,7 @@ const styles = StyleSheet.create({
 
 const App = () => (
   <SafeAreaView style={styles.container}>
-    <View style={styles.titleContainer}>
-      <Text style={styles.title}>Lighteria</Text>
-      <View style={styles.bagContainer}>
-        <Image
-          source={require('./assets/images/icone-sacola.png')}
-          style={styles.image}
-        />
-      </View>
-    </View>
-    <View style={styles.dividerContainer}>
-      <View style={styles.divider} />
-      <View style={styles.dividerLabelContainer}>
-        <Text style={styles.dividerLabel}>
-          Categoria
-        </Text>
-       </View>
-    </View>
+   <OrderList /> 
   </SafeAreaView>
 );
 
