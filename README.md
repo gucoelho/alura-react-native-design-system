@@ -4,6 +4,9 @@ Instrutor: [Eduardo Shinkawa](https://www.linkedin.com/in/eshinkawa/)
 ### Algumas considerações:
 - O curso utiliza React Native na versão 0.60, por problemas na coniguração inicial, neste repo será usada a útima versão (0.64) por ter a documentação mais atualizada.
 - Curso está sendo realizado somento no Windows e com emulador Android.
+- Acredito que por estar usando uam versão 0.60+ foi necessário seguir os passos [desse artigo](https://medium.com/@aravindmnair/add-custom-fonts-to-react-native-0-60-easily-in-3-steps-fcd71459f4c9):
+   - Criar o _react-native.config.js_ na raíz do projeto
+   - Executar o comando yarn react-native link antes de iniciar a aplicação 
 
 ### Setup inicial:
  - Configuração inicial realizada seguindo a documentação oficial &ast;: [Setting up the development environment](https://reactnative.dev/docs/environment-setup)
