@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 24,
+    paddingVertical: 24,
+    paddingHorizontal: 6,
   },
   bagContainer: { backgroundColor: 'white', padding: 18, borderRadius: 50 },
   title: {
@@ -23,7 +24,6 @@ const styles = StyleSheet.create({
     borderColor: '#A1A5AA',
   },
   dividerContainer: {
-    paddingHorizontal: 24,
   },
   dividerLabelContainer: {
     flexDirection: 'row',
