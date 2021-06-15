@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     }
 });
 
-const OrderList = () => (
+const OrderList = () => {
+    return (
     <View style={styles.containerList}>
         <FlatList numColumns={2} 
             data={DATA} 
@@ -18,7 +19,7 @@ const OrderList = () => (
             keyExtractor={item => item.id}
             ListHeaderComponent={<Header />} />
     </View>
-)
+)}
 
 
 export default OrderList;

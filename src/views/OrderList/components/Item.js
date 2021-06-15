@@ -1,5 +1,6 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
     image: { height: 64 },
@@ -20,11 +21,16 @@ const styles = StyleSheet.create({
     },
 });
 
-const Item = (item) => (
-    <View style={styles.containerItem}>
-        <Image source={item.imagem} style={styles.image} resizeMode="contain" />
-        <Text>{item.titulo}</Text>
-    </View>
-)
+const Item = (item) => {
+    const navigation = useNavigation();
+
+    return (
+        <TouchableOpacity style={styles.containerItem} onPress={() => navigation.push("DetailedItem", {item})}>
+            <Image source={item.imagem} style={styles.image} resizeMode="contain" />
+            <Text>{item.titulo}</Text>
+        </TouchableOpacity>
+    );
+}
+
 
 export default Item;
