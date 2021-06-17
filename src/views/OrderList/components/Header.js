@@ -1,8 +1,17 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
+import {
+  BACKGROUND_COLOR,
+  BLACK,
+  FONT_FAMILY_EXTRA_BOLD,
+  FONT_FAMILY_REGULAR,
+  FONT_SIZE_LARGE,
+  FONT_SIZE_MEDIUM,
+  WHITE,
+} from '../../../styles/styles';
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F4F0F4' },
+  container: {flex: 1, backgroundColor: BACKGROUND_COLOR},
   titleContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -10,10 +19,10 @@ const styles = StyleSheet.create({
     paddingVertical: 24,
     paddingHorizontal: 6,
   },
-  bagContainer: { backgroundColor: 'white', padding: 18, borderRadius: 50 },
+  bagContainer: {backgroundColor: WHITE, padding: 18, borderRadius: 50},
   title: {
-    fontFamily: 'OpenSans-ExtraBold',
-    fontSize: 28,
+    fontFamily: FONT_FAMILY_EXTRA_BOLD,
+    fontSize: FONT_SIZE_LARGE,
   },
   image: {
     width: 30,
@@ -23,8 +32,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: '#A1A5AA',
   },
-  dividerContainer: {
-  },
+  dividerContainer: {},
   dividerLabelContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -32,10 +40,10 @@ const styles = StyleSheet.create({
   },
   dividerLabel: {
     padding: 34,
-    backgroundColor: '#F4F0F4',
-    fontSize: 16,
-    fontFamily: 'OpenSans-Regular',
-    color: '#A1A5AA',
+    backgroundColor: BACKGROUND_COLOR,
+    fontSize: FONT_SIZE_MEDIUM,
+    fontFamily: FONT_FAMILY_REGULAR,
+    color: BLACK,
   },
 });
 
