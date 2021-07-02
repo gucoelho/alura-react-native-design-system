@@ -1,7 +1,16 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, View, StyleSheet, Text, Dimensions} from 'react-native';
+import {
+  Image,
+  View,
+  StyleSheet,
+  Text,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import {ImageBackground} from 'react-native';
 import Bag from '../../shared/components/Bag/Bag';
+import Button from '../../shared/components/Button/Button';
 import {
   FONT_FAMILY_BOLD,
   FONT_FAMILY_REGULAR,
@@ -22,9 +31,11 @@ const styles = StyleSheet.create({
   bgContainer: {flex: 6},
   arrow: {height: 24, width: 24},
 });
+import {formatValue} from '../../utils/utils';
 
 export const Background = () => {
   const imgSrc = require('../../assets/images/bgimg.jpg');
+  const navigation = useNavigation();
   return (
     <View style={styles.bgContainer}>
       <ImageBackground
@@ -32,10 +43,12 @@ export const Background = () => {
         source={imgSrc}
         style={styles.imageBackground}>
         <View style={styles.headerContainer}>
-          <Image
-            source={require('../../assets/images/flecha-esquerda.png')}
-            style={styles.arrow}
-          />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Image
+              source={require('../../assets/images/flecha-esquerda.png')}
+              style={styles.arrow}
+            />
+          </TouchableOpacity>
           <View>
             <Bag />
           </View>
@@ -83,10 +96,21 @@ const stylesDesc = StyleSheet.create({
     marginTop: 6,
     color: '#ACAAAB',
   },
+  price: {
+    fontFamily: FONT_FAMILY_BOLD,
+    fontSize: FONT_SIZE_MEDIUM,
+  },
+  footer: {
+    flexDirection: 'row',
+    marginTop: 16,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 });
 
 export const ItemDescription = ({item}) => {
   const {itemName, estudio, titulo, imagem, itemDesc, preco} = item;
+  const navigation = useNavigation();
 
   return (
     <View style={stylesDesc.itemContainer}>
@@ -101,13 +125,17 @@ export const ItemDescription = ({item}) => {
             <Image source={imagem} style={stylesDesc.image} />
           </View>
           <Text style={stylesDesc.desc}>{itemDesc}</Text>
-          <View style={stylesDesc.footer}><Text>{preco}</Text></View>
+          <View style={stylesDesc.footer}>
+            <Text style={stylesDesc.price}>{formatValue(preco)}</Text>
+            <Button
+              label="COMPRAR"
+              onPress={() => navigation.push('Checkout')}></Button>
+          </View>
         </View>
       </View>
     </View>
   );
 };
-
 
 export const DetailedItem = ({route}) => {
   const {item} = route.params;
