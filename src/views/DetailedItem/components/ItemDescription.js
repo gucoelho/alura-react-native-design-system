@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Image,
   View,
@@ -17,9 +17,10 @@ import {
 
 import Button from '../../../shared/components/Button/Button';
 import {formatValue} from '../../../utils/utils';
+import { ItensContext } from '../../../providers/DataContextProvider';
 
 const style = StyleSheet.create({
-  itemContainer: {flex: 4, marginTop: -60},
+  itemContainer: {flex: 5, marginTop: -60},
   itemPosition: {
     justifyContent: 'center',
     flexDirection: 'row',
@@ -71,6 +72,7 @@ const style = StyleSheet.create({
 export const ItemDescription = ({item}) => {
   const {itemName, estudio, titulo, imagem, itemDesc, preco} = item;
   const navigation = useNavigation();
+  const {addItem} = useContext(ItensContext);
 
   return (
     <View style={style.itemContainer}>
@@ -89,7 +91,7 @@ export const ItemDescription = ({item}) => {
             <Text style={style.price}>{formatValue(preco)}</Text>
             <Button
               label="COMPRAR"
-              onPress={() => navigation.push('Checkout')}></Button>
+              onPress={() => { addItem(item); navigation.push('Checkout')}}></Button>
           </View>
         </View>
       </View>

@@ -10,13 +10,16 @@ const Provider = ({children}) => {
       value={{
         itensCheckout,
         addItem: newItem => {
-          let copyItens = [...itensCheckout];
-          let filteredItem = copyItens.find(i => i.id === newItem.id);
+          let copiedItens = [...itensCheckout];
+          let filteredItem = copiedItens.find(i => i.id === newItem.id);
           if (filteredItem)
             filteredItem.quantidade = filteredItem.quantidade + 1;
-          else newItem.quantidade = 1;
+          else {
+            newItem.quantidade = 1;
+            copiedItens = [...copiedItens, newItem]
+          }
 
-          setItensCheckout([...itensCheckout, newItem]);
+          setItensCheckout(copiedItens);
         },
       }}>
       {children}
