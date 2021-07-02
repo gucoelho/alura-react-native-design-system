@@ -34,7 +34,7 @@ export const Background = () => {
         <View style={styles.headerContainer}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image
-              source={require('../../assets/images/flecha-esquerda.png')}
+              source={require('../../../assets/images/flecha-esquerda.png')}
               style={styles.arrow}
             />
           </TouchableOpacity>
