@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {
   BACKGROUND_COLOR,
   BLACK,
   FONT_FAMILY_EXTRA_BOLD,
   FONT_FAMILY_REGULAR,
-  FONT_SIZE_LARGE,
   FONT_SIZE_MEDIUM,
-  WHITE,
+  FONT_SIZE_XX_LARGE,
 } from '../../../styles/styles';
+import Bag from '../../../shared/components/Bag/Bag';
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: BACKGROUND_COLOR},
@@ -19,14 +19,9 @@ const styles = StyleSheet.create({
     paddingVertical: 24,
     paddingHorizontal: 6,
   },
-  bagContainer: {backgroundColor: WHITE, padding: 18, borderRadius: 50},
   title: {
     fontFamily: FONT_FAMILY_EXTRA_BOLD,
-    fontSize: FONT_SIZE_LARGE,
-  },
-  image: {
-    width: 30,
-    height: 30,
+    fontSize: FONT_SIZE_XX_LARGE,
   },
   divider: {
     borderWidth: 0.5,
@@ -51,12 +46,7 @@ const Header = () => (
   <>
     <View style={styles.titleContainer}>
       <Text style={styles.title}>Lighteria</Text>
-      <View style={styles.bagContainer}>
-        <Image
-          source={require('../../../assets/images/icone-sacola.png')}
-          style={styles.image}
-        />
-      </View>
+      <Bag />
     </View>
     <View style={styles.dividerContainer}>
       <View style={styles.divider} />

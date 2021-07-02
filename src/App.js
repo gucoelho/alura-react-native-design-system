@@ -3,7 +3,7 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 import OrderList from './views/OrderList/OrderList';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {DetailedItem} from './views/OrderList/DetailedItem';
+import {DetailedItem} from './views/DetailedItem/DetailedItem';
 import 'react-native-gesture-handler';
 import {BACKGROUND_COLOR} from './styles/styles';
 
