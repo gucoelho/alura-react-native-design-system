@@ -1,11 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
-import {
-  Image,
-  View,
-  StyleSheet,
-  Text,
-} from 'react-native';
+import React, {useContext} from 'react';
+import {Image, View, StyleSheet, Text} from 'react-native';
 import {
   FONT_FAMILY_BOLD,
   FONT_FAMILY_REGULAR,
@@ -17,9 +12,10 @@ import {
 
 import Button from '../../../shared/components/Button/Button';
 import {formatValue} from '../../../utils/utils';
+import {ItensContext} from '../../../providers/DataContextProvider';
 
-const style = StyleSheet.create({
-  itemContainer: {flex: 4, marginTop: -60},
+const styles = StyleSheet.create({
+  itemContainer: {flex: 5, marginTop: -60},
   itemPosition: {
     justifyContent: 'center',
     flexDirection: 'row',
@@ -71,25 +67,29 @@ const style = StyleSheet.create({
 export const ItemDescription = ({item}) => {
   const {itemName, estudio, titulo, imagem, itemDesc, preco} = item;
   const navigation = useNavigation();
+  const {addItem} = useContext(ItensContext);
 
   return (
-    <View style={style.itemContainer}>
-      <View style={style.itemPosition}>
-        <View style={style.item}>
-          <View style={style.textPosition}>
+    <View style={styles.itemContainer}>
+      <View style={styles.itemPosition}>
+        <View style={styles.item}>
+          <View style={styles.textPosition}>
             <View>
-              <Text style={style.header}>{estudio}</Text>
-              <Text style={style.name}>{itemName}</Text>
-              <Text style={style.title}>{titulo}</Text>
+              <Text style={styles.header}>{estudio}</Text>
+              <Text style={styles.name}>{itemName}</Text>
+              <Text style={styles.title}>{titulo}</Text>
             </View>
-            <Image source={imagem} style={style.image} />
+            <Image source={imagem} style={styles.image} />
           </View>
-          <Text style={style.desc}>{itemDesc}</Text>
-          <View style={style.footer}>
-            <Text style={style.price}>{formatValue(preco)}</Text>
+          <Text style={styles.desc}>{itemDesc}</Text>
+          <View style={styles.footer}>
+            <Text style={styles.price}>{formatValue(preco)}</Text>
             <Button
               label="COMPRAR"
-              onPress={() => navigation.push('Checkout')}></Button>
+              onPress={() => {
+                addItem({...item});
+                navigation.push('Checkout');
+              }}></Button>
           </View>
         </View>
       </View>
