@@ -13,13 +13,13 @@ const styles = StyleSheet.create({
   quantity: {
     backgroundColor: RED,
     borderRadius: 100,
-    marginTop: -10,
-    marginLeft: 11,
+    marginTop: -15,
+    marginLeft: 13,
   },
   textQuantity: {
     textAlign: 'center',
     padding: 4,
-    fontSize: FONT_SIZE_X_SMALL,
+    fontSize: 9,
     color: WHITE,
   },
 });

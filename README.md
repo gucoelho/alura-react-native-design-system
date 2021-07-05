@@ -8,10 +8,7 @@ Instrutor: [Eduardo Shinkawa](https://www.linkedin.com/in/eshinkawa/)
    - Criar o _react-native.config.js_ na raíz do projeto
    - Executar o comando yarn react-native link antes de iniciar a aplicação 
   &ast; Na verdade, essas instruções estavam no item 02 do módulo 03 (Navegação e estilos universais)
-
-Módulo 03 (Navegação e estilos universais):
-- Ação necessária que estava descrito no vídeo 03 mas não na transcrição do vídeo 02 do módulo.
-   - Executar o yarn add @react-navigate/stack 
+   - Ação necessária que estava descrito no vídeo 03 mas não na transcrição do vídeo 02 do módulo, que já era necessário: Executar o comando _yarn add @react-navigate/stack_ 
 
 ### Setup:
  - Configuração inicial realizada seguindo a documentação oficial: [Setting up the development environment](https://reactnative.dev/docs/environment-setup)

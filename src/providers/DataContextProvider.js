@@ -11,16 +11,18 @@ const Provider = ({children}) => {
         itensCheckout,
         addItem: newItem => {
           let copiedItens = [...itensCheckout];
-          let filteredItem = copiedItens.find(i => i.id === newItem.id);
-          if (filteredItem)
+          let filteredItem = copiedItens.find(item => item.id === newItem.id);
+          if (filteredItem){
             filteredItem.quantidade = filteredItem.quantidade + 1;
-          else {
-            newItem.quantidade = 1;
+            console.log(filteredItem)
+          } else {
+            newItem['quantidade'] = 1;
+            console.log(newItem)
             copiedItens = [...copiedItens, newItem]
           }
-
+          //console.log(copiedItens)
           setItensCheckout(copiedItens);
-        },
+        }
       }}>
       {children}
     </ItensContext.Provider>

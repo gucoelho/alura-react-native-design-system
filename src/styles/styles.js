@@ -2,6 +2,7 @@ export const BACKGROUND_COLOR = '#F4F0F4';
 export const BLACK = '#000000';
 export const WHITE = '#fff';
 export const RED = '#ff0000';
+export const ACCENT = '#00adef';
 
 export const FONT_FAMILY_LIGHT = 'OpenSans-Light';
 export const FONT_FAMILY_REGULAR = 'OpenSans-Regular';
